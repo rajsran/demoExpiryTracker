@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entry" representedClassName="Entry" syncable="YES">
+        <attribute name="alertDt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="expiryDt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isAlert" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="entries" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="pImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Entry" inverseName="product" inverseEntity="Entry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Product" positionX="-410.01171875" positionY="37.8828125" width="128" height="88"/>
+        <element name="Entry" positionX="-54" positionY="9" width="128" height="118"/>
+    </elements>
+</model>
